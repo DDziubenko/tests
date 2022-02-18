@@ -41,6 +41,19 @@ import { Options, Vue } from 'vue-class-component';
   props: {
     msg: String,
   },
+  data: () => ({
+    message: '',
+  }),
+  methods: {
+    changeMessage(msg: string) {
+      this.message = msg;
+    },
+  },
+  computed: {
+    isMsg(): boolean {
+      return this.message !== '';
+    },
+  },
 })
 export default class HelloWorld extends Vue {
   msg!: string
